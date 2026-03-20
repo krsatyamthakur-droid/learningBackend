@@ -25,7 +25,7 @@ const App = () => {
       <div key={joke.id}>
         <h2>{joke.title}</h2>
         <p>{joke.content}</p>
-
+        <div></div>
         </div>
       ))
      }
