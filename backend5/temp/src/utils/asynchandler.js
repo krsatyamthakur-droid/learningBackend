@@ -8,7 +8,7 @@ const asynchandler=(requesthandler)=>{
 export  {asynchandler};
 
 
-
+// const asynchandler = () =>{}
 // const asynchandler = () =>{}
 // const asynchandler= (func) => () => {}
 // const asynchandler=(func) => async() =>{}
