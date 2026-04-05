@@ -16,9 +16,9 @@ app.use(cookieparser())
 
 // routes
 
-import {router} from './routes/user.routes.js';
+import {userrouter} from './routes/user.routes.js';
 
 // routes decleration
- app.use("/users/",router)
-
+ app.use("/api/v1/users/",userrouter)
+//  http://localhost:8000/api/v1/users/register   
 export {app};
