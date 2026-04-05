@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from'cors';
-import cookieparsar from 'cookie-parser';
+import cookieparser from 'cookie-parser';
 import { p } from 'framer-motion/client';
+
 const app=express();
 app.use(cors({
     origin:process.env.CORS_ORIGIN,
@@ -15,9 +16,9 @@ app.use(cookieparser())
 
 // routes
 
-import {router} from '../routes/user.routes.js';
+import {router} from './routes/user.routes.js';
 
 // routes decleration
  app.use("/users/",router)
 
-export {app}
+export {app};
