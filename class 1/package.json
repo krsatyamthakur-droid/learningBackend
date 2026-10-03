@@ -1,0 +1,16 @@
+{
+  "name": "class-1",
+  "version": "1.0.0",
+  "description": "node js is a run time that allow to excute js code on the server side .  it is built chrome v8 engine  sever means my machine v8 engine is core engine which interperate the javascript  # first of all init the node.js steps npm init -y",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^6.0.0"
+  }
+}
