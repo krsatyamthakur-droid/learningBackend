@@ -1,6 +1,7 @@
 const mongoose=require('mongoose')
-const Schema=mongoose.Schema;
+const {Schema}=mongoose
 const ObjectID=mongoose.ObjectID;
+userid:ObjectID
 const user=new Schema({
     name:String,
     email:{type:String , unique:true} ,
@@ -10,7 +11,10 @@ const user=new Schema({
 const todos=new Schema({
     title:String,
     done:Boolean,
-    userid:ObjectID
+    userid:{
+        type:Schema.Types.ObjectId,
+        ref:'users'
+    }
 })
 
 const UserModel=mongoose.model('users',user);
