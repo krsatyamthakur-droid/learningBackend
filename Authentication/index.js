@@ -6,7 +6,8 @@ const jwt=require('jsonwebtoken')
 const jwt_sceret="hellojames"
 const {UserModel,TodoModel}=require('./db')
 const mongoose=require('mongoose')
-const {z} =require('zod')
+const {z} =require('zod');
+const { p } = require("framer-motion/client");
 mongoose.connect("mongodb+srv://anweshatannu_db_user:YL8jWIaUiYQDMfWo@cluster0.hl1ippf.mongodb.net/satyam_todos")
 
 
@@ -16,6 +17,16 @@ app.post('/signup',async function(req,res){
         email:z.string().email(),
         password:z.string().min(6).max(100)
     })
+    const parseddatawithsuccess=requiredbody.safeParse(req.body);
+    if(!parseddatawithsuccess.success){
+       res.json({
+        mes:"Incorrect format"
+       })
+        return 
+
+    }
+    // how to show user specific error messages
+    
 
     // req.body{
         //name:"satyam",

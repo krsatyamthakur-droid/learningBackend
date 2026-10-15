@@ -1,0 +1,52 @@
+
+name: GitHub Actions Demo
+
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on: [push]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show trigger event
+        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Show runner operating system
+        run: echo "🐧 This job is running on a ${{ runner.os }} server hosted by GitHub!"
+
+      - name: Show branch and repository
+        env:
+          BRANCH_NAME: ${{ github.ref }}
+          REPOSITORY_NAME: ${{ github.repository }}
+        run: |
+          echo "🔎 Branch: $BRANCH_NAME"
+          echo "📦 Repository: $REPOSITORY_NAME"
+
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Confirm repository checkout
+        run: echo "💡 The ${{ github.repository }} repository has been checked out."
+
+      - name: Confirm workflow readiness
+        run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      - name: List files in the repository
+        run: |
+          echo "📂 Files and directories in the repository:"
+          ls -la
+
+      - name: Show current directory
+        run: |
+          echo "📍 Current working directory:"
+          pwd
+
+      - name: Show Git status
+        run: |
+          echo "🔧 Git repository status:"
+          git status
+
+      - name: Display completion message
+        run: echo "✅ All GitHub Actions demo steps completed successfully!"
